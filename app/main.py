@@ -27,6 +27,3 @@ def create_person_list(people: list) -> list:
                 current_person.husband = Person.people[husband_name]
 
     return my_list
-
-
-
