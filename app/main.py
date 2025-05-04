@@ -3,8 +3,6 @@ class Person:
     def __init__(self, name:str, age:int) -> None:
         self.name = name
         self.age = age
-        self.wife = None
-        self.husband = None
         Person.people[self.name] = self
 
 
@@ -17,11 +15,11 @@ def create_person_list(people: list) -> list:
         my_list.append(person_instance)
     for married in people:
         person_current = Person.people[married["name"]]
-        if "wife" in married and married["wife"]:
+        if "wife" in married and married["wife"] is not None:
             wife_name = married["wife"]
             if wife_name in Person.people:
                 person_current.wife = Person.people[wife_name]
-        if "husband" in married and married["husband"]:
+        if "husband" in married and married["husband"] is not None:
             husband_name = married["husband"]
             if husband_name in Person.people:
                 person_current.husband = Person.people[husband_name]
