@@ -1,3 +1,4 @@
+
 class Person:
     people = {}
     def __init__(self, name: str, age: int) -> None:
@@ -6,6 +7,7 @@ class Person:
         self.wife = None
         self.husband = None
         Person.people[self.name] = self
+
 
 def create_person_list(people: list) -> list:
     Person.people.clear()
